@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  products:
+    image: pogs/base-products
+    container_name: pogs-base-products
+    build:
+      context: ./products
+    ports:
+      - "8001:3000"
+  users:
+    image: pogs/base-users
+    container_name: pogs-base-users
+    build:
+      context: ./users
+    ports:
+      - "8002:3000"
+  transactions:
+    image: pogs/base-transactions
+    container_name: pogs-base-transactions
+    build:
+      context: ./transactions
+    ports:
+      - "8003:3000"
