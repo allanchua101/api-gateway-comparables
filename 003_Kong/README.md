@@ -13,7 +13,7 @@ This section showcases basic usage of a Docker-based Kong Gateway
 Run the following shell command to bootup downstream services and Kong Gateway + Dashboard
 
 ```sh
-docker-compose up4
+docker-compose up
 ```
 
 ## Importing Postman Payload
