@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -39,7 +40,7 @@ namespace EShop
               })
               .ConfigureLogging((hostingContext, logging) =>
               {
-                //add your logging
+                logging.AddConsole();
               })
               .UseIISIntegration()
               .Build();
