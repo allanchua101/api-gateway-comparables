@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  products:
+    image: pogs/ocelot-products
+    container_name: ocelot-products
+    build:
+      context: ./products
+    ports:
+      - "52790:3000"
+    environment:
+      "PUBLIC_PORT": "52790"
+  users:
+    image: pogs/ocelot-users
+    container_name: ocelot-users
+    build:
+      context: ./users
+    ports:
+      - "52791:3000"
+    environment:
+      "PUBLIC_PORT": "52791"
+  transactions:
+    image: pogs/ocelot-transactions
+    container_name: ocelot-transactions
+    build:
+      context: ./transactions
+    ports:
+      - "52792:3000"
+    environment:
+      "PUBLIC_PORT": "52792"
+  gateway:
+    image: pogs/ocelot-gateway
+    container_name: ocelot-gateway
+    build:
+      context: ./gateway/EShop
+    ports:
+      - "52793:80"
+    links:
+      - products
+      - users
+      - transactions
