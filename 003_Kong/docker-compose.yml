@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  kong.products:
+    image: pogs/kong-products
+    container_name: kong-products
+    hostname: kong.products
+    build:
+      context: ./products
+    ports:
+      - "52800:3000"
+    environment:
+      "PUBLIC_PORT": "52800"
+  kong.users:
+    image: pogs/kong-users
+    container_name: kong-users
+    hostname: kong.users
+    build:
+      context: ./users
+    ports:
+      - "52801:3000"
+    environment:
+      "PUBLIC_PORT": "52801"
+  kong.transactions:
+    image: pogs/kong-transactions
+    container_name: kong-transactions
+    hostname: kong.transactions
+    build:
+      context: ./transactions
+    ports:
+      - "52802:3000"
+    environment:
+      "PUBLIC_PORT": "52802"
