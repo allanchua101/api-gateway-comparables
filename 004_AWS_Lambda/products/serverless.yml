@@ -1,0 +1,18 @@
+service: eshop-products
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-southeast-1
+  stage: prod
+  apiGateway:
+    restApiId:
+      "Fn::ImportValue": EShopGW-restApiId
+    restApiRootResourceId:
+      "Fn::ImportValue": EShopGW-rootResourceId
+functions:
+  get-products:
+    handler: handler.getProducts
+    events:
+      - http:
+          path: products/list
+          method: get

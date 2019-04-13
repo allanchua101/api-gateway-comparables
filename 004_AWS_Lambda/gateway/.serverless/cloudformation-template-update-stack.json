@@ -1,0 +1,52 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "The AWS CloudFormation template for this Serverless application",
+  "Resources": {
+    "ServerlessDeploymentBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "EShopGW": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "EShopGW"
+      }
+    }
+  },
+  "Outputs": {
+    "ServerlessDeploymentBucketName": {
+      "Value": {
+        "Ref": "ServerlessDeploymentBucket"
+      }
+    },
+    "apiGatewayRestApiId": {
+      "Value": {
+        "Ref": "EShopGW"
+      },
+      "Export": {
+        "Name": "EShopGW-restApiId"
+      }
+    },
+    "apiGatewayRestApiRootResourceId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "EShopGW",
+          "RootResourceId"
+        ]
+      },
+      "Export": {
+        "Name": "EShopGW-rootResourceId"
+      }
+    }
+  }
+}
