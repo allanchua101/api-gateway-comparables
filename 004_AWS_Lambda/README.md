@@ -1,6 +1,6 @@
 # AWS API Gateway with Lambda Functions
 
-This section showcases basic usage of AWS API Gateway for Lambda Functions
+This section showcases basic usage of AWS API Gateway that aggregates downstream Lambda functions
 
 ## Pre-requisites
 
