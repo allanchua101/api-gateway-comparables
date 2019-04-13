@@ -1,6 +1,6 @@
 # AWS API Gateway with Lambda Functions
 
-This section showcases basic usage of AWS API Gateway that aggregates downstream Lambda functions
+This section showcases basic usage of Serverless framework to provision an AWS API Gateway that aggregates downstream Lambda functions
 
 ## Pre-requisites
 
