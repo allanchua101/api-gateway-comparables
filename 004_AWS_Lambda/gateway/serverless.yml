@@ -1,0 +1,25 @@
+service: eshop-gateway
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-southeast-1
+  stage: prod
+resources:
+  Resources:
+    EShopGW:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: EShopGW
+  Outputs:
+    apiGatewayRestApiId:
+      Value:
+        Ref: EShopGW
+      Export:
+        Name: EShopGW-restApiId
+    apiGatewayRestApiRootResourceId:
+      Value:
+        Fn::GetAtt:
+          - EShopGW
+          - RootResourceId
+      Export:
+        Name: EShopGW-rootResourceId
