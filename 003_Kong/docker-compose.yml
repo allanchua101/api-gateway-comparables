@@ -31,3 +31,48 @@ services:
       - "52802:3000"
     environment:
       "PUBLIC_PORT": "52802"
+
+# Kong Services
+  kong:
+    image: kong:0.11.2
+    hostname: kong
+    container_name: kong
+    entrypoint: 
+      - /bin/bash 
+      - -c 
+      - "echo \"Sleeping [10] for postgres startup\" && sleep 10 && echo \"Starting Kong\" && kong start"
+    env_file: config/kong.env
+    ports: 
+      - 10000:8000
+      - 10001:8443
+      - 10002:8001
+      - 10003:8444
+    volumes:
+      - ./kong-core:/usr/local/kong
+
+  konga: 
+    image: pantsel/konga:latest
+    hostname: konga
+    container_name: konga
+    entrypoint: 
+      - /bin/bash 
+      - -c 
+      - "echo \"Sleeping [10] for postgres startup\" && sleep 10 && echo \"Starting Konga\"&&npm run production"
+    env_file: config/konga.env
+    ports:
+      - 12000:1337
+    volumes:
+      - ./konga:/kongadata
+
+  postgres:
+    image: postgres:10-alpine
+    hostname: kongdb
+    container_name: kongdb
+    env_file: config/postgres.env
+    ports: 
+      - 11000:8080
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+     external: true

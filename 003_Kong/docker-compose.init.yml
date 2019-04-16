@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+
+  kong:
+    image: kong:0.11.2
+    hostname: kong
+    container_name: kong
+    entrypoint: 
+      - /bin/bash 
+      - -c 
+      - "echo \"Sleeping [20] for postgres startup\" && sleep 20 && kong migrations up"
+    env_file: config/kong.env
+
+  konga: 
+    image: pantsel/konga:latest
+    hostname: konga
+    container_name: konga
+    entrypoint: 
+      - /bin/bash 
+      - -c 
+      - "echo \"Sleeping [30] for postgres startup\" && sleep 30 && echo \"Starting konga\" && npm start"
+    env_file: config/konga.env
+
+  postgres:
+    image: postgres:10-alpine
+    hostname: kongdb
+    container_name: kongdb
+    env_file: config/postgres.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+     external: true
