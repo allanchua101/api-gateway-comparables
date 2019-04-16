@@ -40,7 +40,7 @@ services:
     entrypoint: 
       - /bin/bash 
       - -c 
-      - "echo \"Sleeping [10] for postgres startup\" && sleep 10 && echo \"Starting Kong\" && kong start"
+      - "echo \"Sleeping [30] for postgres startup\" && sleep 30 && echo \"Starting Kong\" && kong start"
     env_file: config/kong.env
     ports: 
       - 10000:8000
@@ -49,6 +49,8 @@ services:
       - 10003:8444
     volumes:
       - ./kong-core:/usr/local/kong
+    links:
+      - postgres
 
   konga: 
     image: pantsel/konga:latest
@@ -57,13 +59,16 @@ services:
     entrypoint: 
       - /bin/bash 
       - -c 
-      - "echo \"Sleeping [10] for postgres startup\" && sleep 10 && echo \"Starting Konga\"&&npm run production"
+      - "echo \"Sleeping [45] for postgres startup\" && sleep 45 && echo \"Starting Konga\"&&npm run production"
     env_file: config/konga.env
     ports:
       - 12000:1337
     volumes:
       - ./konga:/kongadata
-
+    links:
+      - postgres
+      - kong
+      
   postgres:
     image: postgres:10-alpine
     hostname: kongdb
