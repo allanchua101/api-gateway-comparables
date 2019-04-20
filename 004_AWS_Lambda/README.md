@@ -4,6 +4,10 @@
 
 This section showcases basic usage of Serverless framework to provision an AWS API Gateway that aggregates downstream Lambda functions
 
+### Why use Serverless?
+
+Serverless is an open source cloud-agnostic project that enables rapid development and deployment of APIs to different FASS providers (Azure, AWS, GCP, etc). It abstracts the need to learn different infrastructure as a code languages (ARM, CloudFormation, Cloud Deployment Manager) by providing a CLI that enables quick scaffolding, deployment, removal and invocation of a Serverless Stack.
+
 ## Pre-requisites
 
 - NodeJS 8.10 or Above ([Download Here](https://nodejs.org/en/download/))
@@ -18,10 +22,6 @@ To install Serverless framework for NodeJS, run the following shell command.
 ```sh
 npm install -g serverless
 ```
-
-### Why use Serverless?
-
-Serverless is an open source cloud-agnostic project that enables rapid development and deployment of APIs to different FASS providers (Azure, AWS, GCP, etc). It abstracts the need to learn different infrastructure as a code languages (ARM, CloudFormation, Cloud Deployment Manager) by providing a CLI that enables quick scaffolding, deployment, removal and invocation of a Serverless Stack.
 
 ### Configure your AWS Deployment Account
 
