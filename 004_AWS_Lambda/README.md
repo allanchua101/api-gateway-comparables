@@ -1,5 +1,7 @@
 # AWS API Gateway with Lambda Functions
 
+![Chart](https://github.com/allanchua101/api-gateway-comparables/blob/master/000_docs/diagrams/AWS.png)
+
 This section showcases basic usage of Serverless framework to provision an AWS API Gateway that aggregates downstream Lambda functions
 
 ## Pre-requisites
