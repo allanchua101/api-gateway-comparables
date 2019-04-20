@@ -43,10 +43,10 @@ To deploy whole stack (API Gateway + Downstream Services), run the command below
 # Give execution permission to ci-deploy.sh script
 # Skip this part if your using Windows or you
 # have applied the execution permission before.
-chmod +x .\ci-deploy.sh
+chmod +x ci-deploy.sh
 
 # Execute shell
-.\ci-deploy.sh
+sh ci-deploy.sh
 ```
 
 ### Full Stack Decomissioning
@@ -57,8 +57,8 @@ To decomission whole stack (API Gateway + Downstream Services), run the command 
 # Give execution permission to ci-decomission.sh script
 # Skip this part if your using Windows or you
 # have applied the execution permission before.
-chmod +x .\ci-decomission.sh
+chmod +x ci-decomission.sh
 
 # Execute shell
-.\ci-decomission.sh
+ci-decomission.sh
 ```
