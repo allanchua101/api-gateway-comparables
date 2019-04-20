@@ -1,5 +1,7 @@
 # Ocelot
 
+![High Level Diagram](https://github.com/allanchua101/api-gateway-comparables/blob/master/000_docs/diagrams/Ocelot.png)
+
 This section showcases basic usage of Ocelot as API Gateway.
 
 ### Why Ocelot
