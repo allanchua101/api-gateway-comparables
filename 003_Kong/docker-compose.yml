@@ -71,8 +71,8 @@ services:
       
   postgres:
     image: postgres:10-alpine
-    hostname: kongdb
-    container_name: kongdb
+    hostname: postgres
+    container_name: postgres
     env_file: config/postgres.env
     ports: 
       - 11000:8080
