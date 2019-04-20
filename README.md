@@ -1,6 +1,6 @@
 # API Gateway Comparables
 
-This repository contains POCs of different API Gateway implementations (Vendor, Cloud and Code + Config).
+This repository contains POCs of different API Gateway implementations (Vendor, Cloud and Pluggable Gateways).
 
 ![Repository Banner](https://github.com/allanchua101/api-gateway-comparables/blob/master/000_docs/banners/Repo%20Banner.png)
 
