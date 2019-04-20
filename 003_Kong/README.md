@@ -1,5 +1,7 @@
 # Kong
 
+![High Level Diagram](https://github.com/allanchua101/api-gateway-comparables/blob/master/000_docs/diagrams/Kong.png)
+
 This section showcases basic usage of a Docker-based Kong Gateway
 
 ## Pre-requisites
