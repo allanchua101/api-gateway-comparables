@@ -43,10 +43,10 @@ services:
       - "echo \"Sleeping [20] for postgres startup\" && sleep 20 && echo \"Starting Kong\" && kong start"
     env_file: config/kong.env
     ports: 
-      - 10000:8000
-      - 10001:8443
-      - 10002:8001
-      - 10003:8444
+      - 10000:8000 # HTTP Traffic for data plane
+      - 10001:8443 # HTTPS Traffic for data plane
+      - 10002:8001 # HTTP Traffic for control plane
+      - 10003:8444 # HTTPS Traffic for control plane
     volumes:
       - vkong:/usr/local/kong
     links:
