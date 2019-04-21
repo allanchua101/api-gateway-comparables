@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "07ea8aa4-c2fa-4c35-bd24-5c8267235a9f",
+		"name": "Kong Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Downstream Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:52800/api/products/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52800",
+					"path": [
+						"api",
+						"products",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Downstream Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:52801/api/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52801",
+					"path": [
+						"api",
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Downstream Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:52802/api/transactions/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52802",
+					"path": [
+						"api",
+						"transactions",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "kong.users",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:10000/api/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"api",
+						"users",
+						"list"
+					]
+				},
+				"description": "Endpoint used for retrieving list of products from gateway Users API"
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway Products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "kong.products",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:10000/api/products/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"api",
+						"products",
+						"list"
+					]
+				},
+				"description": "Endpoint used for retrieving list of products from gateway Products API"
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway Transactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "kong.transactions",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:10000/api/transactions/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"api",
+						"transactions",
+						"list"
+					]
+				},
+				"description": "Endpoint used for retrieving list of products from gateway transactions API"
+			},
+			"response": []
+		}
+	]
+}

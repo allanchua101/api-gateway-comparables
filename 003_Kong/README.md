@@ -10,12 +10,11 @@ This section showcases basic usage of a Docker-based Kong Gateway
 - Docker Compose
 - Postman (Optional for api testing)
 
-## Initial boot of Kong
+## Setup Cluster Data
 
 Run the following shell command on first time. The ```docker-compose.init.yml``` file will initialize the postgres database and wire up necessary kong configurations.
 
 ```sh
-# For Windows users only
 docker volume create --name=pgdata
 docker volume create --name=vkonga
 docker volume create --name=vkong
@@ -23,7 +22,9 @@ docker volume create --name=vkong
 docker-compose -f .\docker-compose.init.yml up
 ```
 
-## Sub-sequent boots of Kong
+Once the Konga container shows it finished hooking of data required by dashboard (Indicated by log indicating port 1333), stop compose session via single ```control + c``` then execute ```docker-compose up```
+
+## Sub-sequent cluster boots
 
 Run the following shell command on sub-sequent boots.
 
@@ -31,16 +32,22 @@ Run the following shell command on sub-sequent boots.
 docker-compose up
 ```
 
-## Restarting postgres data
+## Wiping cluster artifacts
 
-Run the following command to wipe kong pg db data
+Run the following command to wipe the cluster artifacts
 
 ```sh
 docker volume rm pgdata
 docker volume rm vkonga
 docker volume rm vkong
+
+docker-compose down
 ```
 
 ## Importing Postman Payload
 
-TODO
+You can utilize the postman payload found on the root of this folder to test both downstream and gateway endpoints.
+
+```sh
+Kong Demo.postman_collection.json
+```
