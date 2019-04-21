@@ -40,7 +40,7 @@ services:
     entrypoint: 
       - /bin/bash 
       - -c 
-      - "echo \"Sleeping [20] for postgres startup\" && sleep 20 && echo \"Starting Kong\" && kong start"
+      - "echo \"Sleeping [5] for postgres startup\" && sleep 5 && echo \"Starting Kong\" && kong start"
     env_file: config/kong.env
     ports: 
       - 10000:8000 # HTTP Traffic for data plane
@@ -51,6 +51,9 @@ services:
       - vkong:/usr/local/kong
     links:
       - postgres
+      - kong.products
+      - kong.users
+      - kong.transactions
 
   konga: 
     image: pantsel/konga:legacy
@@ -59,7 +62,7 @@ services:
     entrypoint: 
       - /bin/bash 
       - -c 
-      - "echo \"Sleeping [30] for postgres startup\" && sleep 30 && echo \"Starting Konga\"&&npm run production"
+      - "echo \"Sleeping [10] for postgres startup\" && sleep 10 && echo \"Starting Konga\"&&npm run production"
     env_file: config/konga.env
     ports:
       - 12000:1337
