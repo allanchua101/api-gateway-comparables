@@ -17,8 +17,10 @@ Run the following shell command on first time. The ```docker-compose.init.yml```
 ```sh
 # For Windows users only
 docker volume create --name=pgdata
+docker volume create --name=vkonga
+docker volume create --name=vkong
 
-docker-compose -f .\docker-compose.init.yml up --abort-on-container-exit
+docker-compose -f .\docker-compose.init.yml up
 ```
 
 ## Sub-sequent boots of Kong
@@ -35,6 +37,8 @@ Run the following command to wipe kong pg db data
 
 ```sh
 docker volume rm pgdata
+docker volume rm vkonga
+docker volume rm vkong
 ```
 
 ## Importing Postman Payload
