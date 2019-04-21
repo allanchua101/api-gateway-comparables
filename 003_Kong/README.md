@@ -32,6 +32,12 @@ Run the following shell command on sub-sequent boots.
 docker-compose up
 ```
 
+### Setting up Kong via Konga
+
+- Navigate to the Konga dashboard exposed at [http://localhost:12000](http://localhost:12000) and create a Kong Admin.
+- Provide Kong Admin URL
+- Install downstream services via APIs tab.
+
 ## Wiping cluster artifacts
 
 Run the following command to wipe the cluster artifacts
