@@ -1,6 +1,6 @@
 # API Gateway Comparables
 
-This repository contains POCs of different API Gateway implementations (Vendor, Cloud and Pluggable Gateways).
+This repository contains POC of different API Gateway implementations (Vendor, Cloud and Pluggable Gateways).
 
 ![Repository Banner](https://github.com/allanchua101/api-gateway-comparables/blob/master/000_docs/banners/Repo%20Banner.png)
 
@@ -8,7 +8,7 @@ This repository contains POCs of different API Gateway implementations (Vendor, 
 
 - [Ocelot](https://github.com/allanchua101/api-gateway-comparables/tree/master/002_Ocelot_DotNet)
 - [Kong](https://github.com/allanchua101/api-gateway-comparables/tree/master/003_Kong)
-- [AWS API Gateway with Lambdas](https://github.com/allanchua101/api-gateway-comparables/tree/master/004_AWS_Lambda)
+- [AWS API Gateway with Lambdas Serverless](https://github.com/allanchua101/api-gateway-comparables/tree/master/004_AWS_Lambda)
 
 ## Abstract
 
@@ -26,3 +26,6 @@ Aside for troubles introduced to client-side applications, cross cutting concern
 To solve these problems, API Gateways are introduced.
 
 ## API Gateways
+
+An API Gateway is a piece of software that sits in front of microservice ecosystems that make it look like a single entity from a consumer point of view. API gateways does it by aggregating multiple downstream service APIs and exposing them as a single family of APIs.
+
