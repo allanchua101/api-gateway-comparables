@@ -8,7 +8,7 @@ This repository contains POC of different API Gateway implementations (Vendor, C
 
 - [Ocelot](https://github.com/allanchua101/api-gateway-comparables/tree/master/002_Ocelot_DotNet)
 - [Kong](https://github.com/allanchua101/api-gateway-comparables/tree/master/003_Kong)
-- [AWS API Gateway with Lambdas via Serverless](https://github.com/allanchua101/api-gateway-comparables/tree/master/004_AWS_Lambda)
+- [AWS API Gateway with Lambdas](https://github.com/allanchua101/api-gateway-comparables/tree/master/004_AWS_Lambda) via [Serverless](https://serverless.com/)
 
 ## Abstract
 
